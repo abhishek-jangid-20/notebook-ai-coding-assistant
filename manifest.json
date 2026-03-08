@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Notebook AI Coding Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered code improvement assistant for Jupyter Notebook, JupyterLab, and Google Colab",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.openai.com/*",
+    "https://api.groq.com/*",
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "http://localhost:*/*",
+    "https://colab.research.google.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Notebook AI Assistant"
+  },
+  "commands": {
+    "improve-code": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "Improve or fix selected code with AI"
+    }
+  }
+}

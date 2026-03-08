@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notebook AI Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="popup-header">
+      <h1>Notebook AI</h1>
+      <p class="subtitle">Select code → Ctrl+Shift+E</p>
+    </header>
+
+    <main class="popup-content">
+      <section class="form-group">
+        <label for="provider">AI Provider</label>
+        <select id="provider">
+          <option value="gpt">OpenAI (GPT)</option>
+          <option value="groq">Groq (Free)</option>
+          <option value="claude">Anthropic (Claude)</option>
+          <option value="gemini">Google (Gemini)</option>
+        </select>
+      </section>
+
+      <section class="form-group">
+        <label for="model">Model</label>
+        <div class="model-row">
+          <select id="model">
+          <option value="gpt-4o-mini">GPT-4o Mini</option>
+          <option value="gpt-4o">GPT-4o</option>
+          <option value="gpt-4-turbo">GPT-4 Turbo</option>
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+        </select>
+          <button type="button" id="fetchModels" class="btn-fetch" title="Fetch models from API">↻</button>
+        </div>
+        <span id="modelStatus" class="hint model-status"></span>
+      </section>
+
+      <section class="form-group">
+        <label for="context">Context (optional)</label>
+        <textarea id="context" rows="2" placeholder="e.g. optimize for speed, fix the bug, add error handling"></textarea>
+        <span class="hint">Extra instructions for the AI (applies to all requests)</span>
+      </section>
+
+      <section class="form-group">
+        <label for="apiKey">API Key</label>
+        <input type="password" id="apiKey" placeholder="sk-... or your API key" autocomplete="off">
+        <span class="hint">Stored locally, never sent except to the selected provider</span>
+      </section>
+
+      <section class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="autoFormat" checked>
+          <span>Auto-format generated code</span>
+        </label>
+      </section>
+      <section class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="floatingWindow" checked>
+          <span>Show result in floating window (choose Accept or just view)</span>
+        </label>
+      </section>
+
+      <div id="status" class="status" hidden></div>
+      <button id="save" class="btn btn-primary">Save Settings</button>
+    </main>
+
+    <footer class="popup-footer">
+      <p>Works in Jupyter, JupyterLab & Colab</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
