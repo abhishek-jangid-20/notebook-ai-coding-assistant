@@ -1,6 +1,6 @@
-# 🚀 Notebook AI Coding Assistant
+# 🚀 Notebook AI Copilot: Supercharge Your Data Science Workflow
 
-An intelligent, lightweight Chrome Extension that transforms your **Jupyter Notebook**, **JupyterLab**, and **Google Colab** environments into an AI-powered workspace. Select your code, use a quick keyboard shortcut, and instantly generate improved, refactored, or corrected code directly into your notebook. Built with support for top-tier LLMs like OpenAI, Anthropic, Google Gemini, and Groq.
+Transform your **Jupyter Notebook**, **JupyterLab**, and **Google Colab** environments into an intelligent, AI-driven workspace. Select code, hit a shortcut, and let top-tier AI models (OpenAI, Anthropic Claude, Google Gemini, and Groq) instantly refactor, debug, or generate code directly inside your cells. No copy-pasting required—just seamless, context-aware AI pairing!
 
 ## Features
 
